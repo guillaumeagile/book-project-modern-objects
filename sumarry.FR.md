@@ -16,23 +16,31 @@ https://radicalobjectorientation.substack.com/
 
 ## anti pattenrs
 
+
 ### null
+
 
 ### exceptions
 
+
 ### logique dans les constructeurs
+
 
 ### états et mutabilité
 
+
 ### active records
+
 
 ### appel des constructeurs
 
-toute ligne de code qui prend la responsabilité d'appel un constructeur d'un nouvel objet (new) est un SMELL en puissance 
+toute ligne de code qui prend la responsabilité d'appel un constructeur d'un nouvel objet (new) est un SMELL en puissance ...
+
 Expliquer pourquoi
 
 
 ## patterns
+
 
 ### immutabilité
 
@@ -48,7 +56,9 @@ Expliquer pourquoi
 
 ### builder ou mother object
 
+
 ### Builder plutot que constructeur
+
 
 ### injection de dépendance
 
@@ -62,13 +72,23 @@ https://www.linkedin.com/posts/tastapod_why-event-sourcing-is-not-object-oriente
 
 Le principe majeur pour créer un DSL est de se parer d'un ensemble d'objects qui communiquen dans 1 sens et son indépendants.
 faire schéma.
+
 Chaque objet retient un état de manière externe, mais ne laisse personne influencer cet état (immutabilité).
-Pour évoluer d'un état à l'autre (principe de la machine à état) on va donner naissance à un nouvelle objet pour chaque nouvel état
+
+Pour évoluer d'un état à l'autre (principe de la machine à état) on va donner naissance à un nouvelle objet pour chaque nouvel état.
+
 A son tour, tout nouvel objet gère son propre état avec potentiellement des propriétés internes, qu'il peut exposer pour dire qq chose (Tell, don't ask). Mais surtout son état, c'est son type. C'est sa nature.
+
 Par exemple: je suis l'état de départ. Ou: je suis l'état terminal.
 
 Il y a donc un point de départ. 
-C'est le seul objet qui peut etre construit, mais mieux encore , un fonction statique de Build() s'en chargera
+C'est le seul objet qui peut etre construit, mais mieux encore , un fonction statique de Build() s'en chargera.
+
+Les autres objets qui représentent les états suivants, ne se créént que par appel d'une fonction disponilble sur l'objet précédent dans le graphe qui relie les objets.
+
+Et les fonctions publiquent d'un objet ne devraient pas renvoyer void et modifier l'état interne de l'objet, qui se doit d'etre immuable. Au contraire, elle doivent etre pure, et donc retourne l'effet produit.
+Et dans le cas d'un DSL (machine à état), l'effet d'une fonction publique est de produite un nouvel état, et donc un nouvel objet.
+
 
 
 ## Functions are the new objects
