@@ -70,8 +70,9 @@ l'idée est de construire des objets dans l'esprit de SmallTalk, à communicatio
 selon le Principle of Mutual Oblivion (PoMO) et de Functionnal independency
 https://www.linkedin.com/posts/tastapod_why-event-sourcing-is-not-object-oriented-activity-7338832824013119490-31Ll?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAEg5bUBQXG2QnMueen743s0x85ROxzm_9M
 
-Le principe majeur pour créer un DSL est de se parer d'un ensemble d'objects qui communiquen dans 1 sens et son indépendants.
+Le principe majeur pour créer un DSL est de se parer d'un ensemble d'objects qui communiquent dans 1 sens uniquement et son indépendants.
 faire schéma.
+![iamge à refaire](https://substackcdn.com/image/fetch/w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fec51fe7a-5b90-451f-b07e-2f18fd2ea3fa_1812x258.png)
 
 Chaque objet retient un état de manière externe, mais ne laisse personne influencer cet état (immutabilité).
 
