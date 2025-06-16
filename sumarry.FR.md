@@ -51,6 +51,9 @@ Expliquer pourquoi
 ### null objects
 
 
+### error handling and management
+
+
 ### monades
 
 
